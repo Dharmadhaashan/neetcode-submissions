@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& n, int target) {
+        int i=0;
+        int j=n.size()-1;
+        while(i<j){
+            if(n[i]+n[j]==target){
+                return {i+1,j+1};
+            }
+            if(n[i]+n[j]>target){
+                j--;
+                continue;
+            }
+            if(n[i]+n[j]<target){
+                i++;
+                continue;
+            }
+        }
+        return {};
+    }
+};
